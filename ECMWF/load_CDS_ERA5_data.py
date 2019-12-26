@@ -1,48 +1,45 @@
-# 
-# ERA5 Modellevels require long time for retrieval, use prtessure levels insted
-# - native spatial resolution 0.25x0.25 degree 
+# Example script for data download
+# Data is downloaded for one month by default. Choose explicit start- and enddate if desired.
+# request for more than one month of data should be split into several requests.
+# ERA5 Modellevels require long time for retrieval, use pressure levels instead
+# - native spatial resolution 0.25x0.25 degree
 # - hourly temporal resolution
 #!/usr/bin/env python
 import cdsapi
 import calendar
 
 # load surface data
-atmo_surface = False
-# load 3D Daten 
-atmo_3dpl      = False # pressure levels
-atmo_3dml      = True # auf model levels
-# Region 
-# Optional. Subset (clip) to an area. Specify as N/W/S/E in Geographic lat/long degrees. 
-# Southern latitudes and western longitudes must be given as negative numbers. Requires "grid" to be set to a regular grid, e.g. "0.3/0.3".
-# bei PL und surface heisst es area bei ML region
-region = [64, -6, 42, 25] # Hannover+10Grad 
-
-# hier fuer PL
-#region = "70/-7/39/31", # Europa
-#region = "55/5/47/15", # Germany 
+atmo_surface = True
+# load 3D data if you know what you are doing and realy need this
+atmo_3dpl      = False # 37 pressure levels
+atmo_3dml      = False # 137 model levels
+# Region
+# Optional. Subset (clip) to an area. Specify as N/W/S/E in Geographic lat/long degrees.
+# Southern latitudes and western longitudes must be given as negative numbers.
+region = "55/5/47/15", # Germany
 # Year
-year = 2018 
+year = 2018
 year_str = str(year)
 # Month
-month = 11 
+month = 11
 month_str = "%02d" %(month)
 # Number of days in month
 numberOfDays = calendar.monthrange(year, month)[1]
 # List of days for retrieval
 daystart = 1
-dayend = numberOfDays 
+dayend = numberOfDays
 zeitraum = (list(map(str,range(daystart,dayend+1))))
 # Combination of variables for time strings
 startDate = '%04d%02d%02d' % (year, month, daystart)
 lastDate = '%04d%02d%02d' % (year, month, dayend)
 # Output filenames
 target_s = "ERA5_%04d%02d%02d_surface.nc" % (year, month, daystart)
-target_3dpl = "ERA5pl_%04d%02d%02d_europe_3d.nc" % (year, month, daystart)
-target_3dml = "ERA5ml_%04d%02d%02d_europe_3d.nc" % (year, month, daystart)
+target_3dpl = "ERA5pl_%04d%02d%02d_3d.nc" % (year, month, daystart)
+target_3dml = "ERA5ml_%04d%02d%02d_3d.nc" % (year, month, daystart)
 requestDates = (startDate + "/TO/" + lastDate)
-# API Aufruf
+# API call
 c = cdsapi.Client()
-# surface daten
+# surface data
 if atmo_surface:
     c.retrieve('reanalysis-era5-single-levels',{
         'product_type':'reanalysis',
@@ -63,7 +60,7 @@ if atmo_surface:
             '18:00','19:00','20:00',
             '21:00','22:00','23:00'
         ]},
-		target_s  # Zeitraum in Namen einfuegen
+		target_s
     )
 # 3d daten fuer europa auf Luftdruckleveln
 if atmo_3dpl:
