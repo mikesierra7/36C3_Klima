@@ -38,8 +38,11 @@ The scripts download, unzip and plot time series and gridded data. Documentation
 * **ani_DWD_grid.m** display all years and save to animated gif.
 * **streifen_DWD_grid.m** calculate warming stripes for arbitrary positions within DWD gridded dataset
 ECMWF
+* **timeseries_DWD.m** download station descriptions, plot of map and download time series of Potsdam air temperature
 * **data**-folder contains necessary colormaps and a file of geographical coordinates to be used instead of the Gauß-Grüger coordinates in the DWD data files.
+
+ECMWF
 ----
 The ERA5 data is hosted at the Copernicus Climate Data Store (CDS), which provides access via a [python api](https://cds.climate.copernicus.eu/api-how-to). Alternatively data can be searched and downloaded in the data catalogue website.
-* **ERA5_snow.py** load snow related data for example MATLAB scripts.
+* **ERA5_snow.py** load snow related data for example MATLAB script.
 * **load_CDS_ERA5_data.py** download different 2d and 3D datasets.
