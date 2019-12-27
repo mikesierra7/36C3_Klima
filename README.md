@@ -1,3 +1,5 @@
+work in progress V.0.5.20191227
+
 # 36C3_Klima
 Support Material for the presentation 'Nutzung öffentlicher Klimadaten' given at 36C3, 27.-30. December 2019, Leipzig, Germany.
 
@@ -21,14 +23,22 @@ Links to data providers
 * [Copernicus EU-Program main site](https://www.copernicus.eu)
 * [Copernicus Climate Change Service](https://cds.climate.copernicus.eu) for access to data catalogue, CDS api and online toolbox
 
+**NASA**
+* [EOSDIS](https://earthdata.nasa.gov/eosdis) Earth Observing System Data and Information System, provides access to datasets to the different Distributed Active Archive Centers (DAAC)
+* [Worldview](https://worldview.earthdata.nasa.gov/) visualizes satellite observations and provides data download ([Source on GitHub](https://github.com/nasa-gibs/worldview))
+
 Software
 ========
-This is a collection of scripts in MATLAB for the retrieval, analysis and visualization of data from DWD and ECMWF repositories. The scripts are sorted into directories according to the service.
+This is a collection of scripts in MATLAB for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services.
 
 DWD
 ---
-
+The scripts download, unzip and plot time series and gridded data. Documentation is not downloaded and can be found in the same directory as the data on [opendata.dwd.de](https://opendata.dwd.de).
+* **load_DWD_grid_data.m** downloads the annual mean temperatures for Germany from 1881 to 2018. Files are unzipped and converted to the binary MATLAB format. These are used in scripts for plotting the data.
+* **ani_DWD_grid.m** display all years and save to animated gif.
+* **streifen_DWD_grid.m** calculate warming stripes for arbitrary positions within DWD gridded dataset
 ECMWF
+* **data**-folder contains necessary colormaps and a file of geographical coordinates to be used instead of the Gauß-Grüger coordinates in the DWD data files.
 ----
 The ERA5 data is hosted at the Copernicus Climate Data Store (CDS), which provides access via a [python api](https://cds.climate.copernicus.eu/api-how-to). Alternatively data can be searched and downloaded in the data catalogue website.
 * **ERA5_snow.py** load snow related data for example MATLAB scripts.
