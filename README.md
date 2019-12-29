@@ -1,4 +1,4 @@
-work in progress V.0.5.20191227
+work in progress V.0.5.20191229
 
 # 36C3_Klima
 Support Material for the presentation 'Nutzung öffentlicher Klimadaten' given at 36C3, 27.-30. December 2019, Leipzig, Germany.
@@ -29,7 +29,7 @@ Links to data providers
 
 Software
 ========
-This is a collection of scripts in MATLAB for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services.
+This is a collection of scripts in MATLAB and Python for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services. Running the MATLAB scripts in Octave requires the mapping and NetCDF packages.
 
 DWD
 ---
