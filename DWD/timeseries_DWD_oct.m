@@ -18,11 +18,11 @@ if reloaddata
 end
 %% List of Stations
 % generate some statistics and map of stations
-% 1. Stations_id 
-% 2. von_datum 
-% 3. bis_datum 
+% 1. Stations_id
+% 2. von_datum
+% 3. bis_datum
 % 4. Stationshoehe
-% 5. geoBreite 
+% 5. geoBreite
 % 6. geoLaenge
 % 7. Stationsname
 % 8. Bundesland
@@ -32,7 +32,7 @@ fclose(fid);
 for hi=1:size(stc{1},1)
   if isnan(stc{4}(hi))
     break
-  endif  
+  endif
   anzeit(hi,1)=datenum(stc{2}(hi),'yyyymmdd');
   enzeit(hi,1)=datenum(stc{3}(hi),'yyyymmdd');
 endfor
@@ -48,6 +48,10 @@ ylabel('count')
 xlabel('duration / years');
 axis tight
 %% Map of stations
+% a shapefile (use shapedraw from the mapping package) to plot, e.g.,
+% coastlines is available at https://osmdata.openstreetmap.de/data/
+% and can be used to draw a nicer map of the station locations. However,
+% this is around 1GB in size, so I skipped this part.
 lat=stc{5};
 lon=stc{6};
 figure
