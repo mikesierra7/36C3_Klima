@@ -1,5 +1,3 @@
-work in progress V.0.8.20200105
-
 # 36C3_Klima
 Support Material for the presentation '[Nutzung öffentlicher Klimadaten](https://media.ccc.de/v/36c3-10571-nutzung_offentlicher_klimadaten)' given at 36C3, 27.-30. December 2019, Leipzig, Germany. [Video (German with Englisch translation)](https://media.ccc.de/v/36c3-10571-nutzung_offentlicher_klimadaten)
 
