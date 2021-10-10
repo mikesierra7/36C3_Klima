@@ -2,3 +2,10 @@
 .DS_Store
 DWD/.DS_Store
 DWD/data/.DS_Store
+*.asc
+*.html
+*.zip
+*.txt
+*.gif
+*.mat
+*.png
