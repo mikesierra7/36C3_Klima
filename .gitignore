@@ -9,3 +9,5 @@ DWD/data/.DS_Store
 *.gif
 *.mat
 *.png
+*.m~
+*.nc

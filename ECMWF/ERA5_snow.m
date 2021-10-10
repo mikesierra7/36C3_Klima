@@ -28,12 +28,18 @@ if plotmonths
     set(get(cb,'Label'),'string','Snow fall / mm water equiv.')
 end
 data=zeros(length(hzp),4);
+expver=1; % new dimension in ERA5 Data 
+% see https://confluence.ecmwf.int/pages/viewpage.action?pageId=173385064
 for hi=1:length(hzp)
-    d1=ncread(dfile,'t2m_0001',[1 1 hi],[inf inf 1])-278.5651;
+    d1=ncread(dfile,'t2m',[1 1 expver hi],[inf inf 1 1])-278.5651;
+    if isnan(d1(1,1))
+        expver=2;
+        d1=ncread(dfile,'t2m',[1 1 expver hi],[inf inf 1 1])-278.5651;
+    end
     temp=interp2(glat,glon,d1,pos(1),pos(2));
-    d2=ncread(dfile,'sd_0001',[1 1 hi],[inf inf 1]);
+    d2=ncread(dfile,'sd',[1 1 expver hi],[inf inf 1 1]);
     sd=interp2(glat,glon,d2,pos(1),pos(2));
-    d3=ncread(dfile,'sf_0001',[1 1 hi],[inf inf 1]);
+    d3=ncread(dfile,'sf',[1 1 expver hi],[inf inf 1 1]);
     sf=interp2(glat,glon,d3,pos(1),pos(2));
     data(hi,:)=[hzp(hi) temp sd sf];
     % Plot
