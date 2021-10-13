@@ -42,6 +42,7 @@ ECMWF
 ECMWF
 ----
 The ERA5 data is hosted at the Copernicus Climate Data Store (CDS), which provides access via a [python api](https://cds.climate.copernicus.eu/api-how-to). Alternatively data can be searched and downloaded in the data catalogue website.
-* **ERA5_snow.py** load snow related data for example MATLAB script.
+* **ERA5_snow_data_load.py** load snow related data for example MATLAB script.
 * **ERA5_snow.m** Example MATLAB script for data access in NetCDF files.
+* **ERA5_snow.py** Example Python script for data access in NetCDF files.
 * **load_CDS_ERA5_data.py** download different 2d and 3D datasets.
