@@ -27,7 +27,7 @@ Links to data providers
 
 Software
 ========
-This is a collection of scripts in MATLAB and Python for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services. Running the MATLAB scripts in Octave requires the [mapping](https://octave.sourceforge.io/mapping/index.html) and [NetCDF](https://octave.sourceforge.io/netcdf/index.html) packages.
+This is a collection of scripts in MATLAB and Python for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services. Running the MATLAB scripts in Octave requires the [mapping](https://octave.sourceforge.io/mapping/index.html) and [NetCDF](https://octave.sourceforge.io/netcdf/index.html) packages. The Python scripts require the *netCDF4*, *cftime* and *SciPy* packages for data access and analysis.
 
 DWD
 ---
