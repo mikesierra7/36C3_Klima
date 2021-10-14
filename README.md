@@ -27,12 +27,12 @@ Links to data providers
 
 Software
 ========
-This is a collection of scripts in MATLAB and Python for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services. Running the MATLAB scripts in Octave requires the [mapping](https://octave.sourceforge.io/mapping/index.html) and [NetCDF](https://octave.sourceforge.io/netcdf/index.html) packages. The Python scripts require the *netCDF4*, *cftime* and *SciPy* packages for data access and analysis.
+This is a collection of scripts in MATLAB and Python for the retrieval, analysis and visualization of data from *DWD* and *ECMWF* repositories. The scripts are sorted into directories according to the service. No additional Software is provided for *NASA* services. Running the MATLAB scripts in Octave requires the [mapping](https://octave.sourceforge.io/mapping/index.html) and [NetCDF](https://octave.sourceforge.io/netcdf/index.html) packages. The Python scripts require the [netCDF4](https://unidata.github.io/netcdf4-python/), [cftime](https://unidata.github.io/cftime/) and [SciPy](https://www.scipy.org/) packages for data access and analysis.
 
 DWD
 ---
 The scripts download, unzip and plot time series and gridded data. Documentation is not downloaded and can be found in the same directory as the data on [opendata.dwd.de](https://opendata.dwd.de).
-* **load_DWD_grid_data.m** downloads the annual mean temperatures for Germany from 1881 to 2018. Files are unzipped and converted to the binary MATLAB format. These are used in scripts for plotting the data.
+* **load_DWD_grid_data.m** downloads the annual mean temperatures for Germany from 1881 to 2020. Files are unzipped and converted to the binary MATLAB format. These are used in scripts for plotting the data.
 * **ani_DWD_grid.m** display all years and save to animated gif.
 * **streifen_DWD_grid.m** calculate warming stripes for arbitrary positions within DWD gridded dataset
 ECMWF
