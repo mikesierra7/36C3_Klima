@@ -37,7 +37,7 @@ The scripts download, unzip and plot time series and gridded data. Documentation
 * **streifen_DWD_grid.m** calculate warming stripes for arbitrary positions within DWD gridded dataset
 ECMWF
 * **timeseries_DWD.m** download station descriptions, plot of map and download time series of Potsdam air temperature
-* **data**-folder contains necessary colormaps and a file of geographical coordinates to be used instead of the Gauß-Grüger coordinates in the DWD data files.
+* **data**-folder contains necessary colormaps and a file of geographical coordinates to be used instead of the Gauß-Krüger coordinates in the DWD data files.
 
 ECMWF
 ----
