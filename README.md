@@ -32,10 +32,9 @@ This is a collection of scripts in MATLAB and Python for the retrieval, analysis
 DWD
 ---
 The scripts download, unzip and plot time series and gridded data. Documentation is not downloaded and can be found in the same directory as the data on [opendata.dwd.de](https://opendata.dwd.de).
-* **load_DWD_grid_data.m** downloads the annual mean temperatures for Germany from 1881 to 2020. Files are unzipped and converted to the binary MATLAB format. These are used in scripts for plotting the data.
+* **load_DWD_grid_data** downloads the annual mean temperatures for Germany from 1881 to 2020. Files are unzipped and converted to the binary MATLAB or NumPy format. These are used in scripts for plotting the data.
 * **ani_DWD_grid.m** display all years and save to animated gif.
-* **streifen_DWD_grid.m** calculate warming stripes for arbitrary positions within DWD gridded dataset
-ECMWF
+* **streifen_DWD_grid** calculate warming stripes for arbitrary positions within DWD gridded dataset
 * **timeseries_DWD.m** download station descriptions, plot of map and download time series of Potsdam air temperature
 * **data**-folder contains necessary colormaps and a file of geographical coordinates to be used instead of the Gauß-Krüger coordinates in the DWD data files.
 
