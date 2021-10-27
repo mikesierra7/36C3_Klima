@@ -14,6 +14,28 @@ from cartopy import crs as ccrs
 from cartopy.mpl.gridliner import LatitudeFormatter , LongitudeFormatter
 import cartopy.feature as cfeature
 
+def plot_fun2(lon, lat, dC,jahr,mycmap):
+    '''
+    Plot annual mean temperature map for Germany
+
+    Parameters
+    ----------
+    lon : longitude
+    lat : latitude
+    dC : array of temperature
+    jahr : string with year, which is used as title for plot
+    mycmap : custom colormap
+
+    Returns
+    -------
+    pname : filename of saved figure
+
+    '''
+    fig=plot_german_data(lon, lat, dC,[],jahr,mycmap, [-3, 4.5])
+    pname='tplot'+jahr+'.png'
+    fig.savefig(pname)
+    return pname
+
 def ifun(l1,l2,d,x1,x2):
     """
     Interpolate chosen position in grid
@@ -77,7 +99,7 @@ def plot_stripes(zp,tempdata,mycmap,plottitle='location',meantemp=0):
     plt.legend()
     plt.show()
     
-def plot_german_data(lon,lat,adata,pos=[],plottitle=''):
+def plot_german_data(lon,lat,adata,pos=[],plottitle='',mycmap='RdBu_r', axlims=[]):
     """
     plot map of annual mean temperature
 
@@ -88,10 +110,12 @@ def plot_german_data(lon,lat,adata,pos=[],plottitle=''):
     adata : 2D array of temperature
     pos : position for a single marker, optional
     plottitle : title of figure, optional
+    mycmap : colormap, optional
+    axlims : 1x2 array of colobar axis limits, optional
 
     Returns
     -------
-    None.
+    fig : figure handle
 
     """
     states_provinces = cfeature.NaturalEarthFeature(
@@ -99,9 +123,9 @@ def plot_german_data(lon,lat,adata,pos=[],plottitle=''):
         name='admin_0_countries',
         scale='10m',
         facecolor='none')
-    plt.figure(figsize=[15,10])
+    fig=plt.figure(figsize=[10.5,8])
     ax = plt.subplot(projection=ccrs.PlateCarree())
-    da=plt.scatter(lon,lat,c=adata[:,:,0],marker='.',cmap='RdBu_r')
+    da=plt.scatter(lon,lat,c=adata,marker='.',cmap=mycmap)
     ax.add_feature(states_provinces, edgecolor='gray')
     ax.set_aspect('equal', 'box')
     if len(pos) !=0:
@@ -115,6 +139,9 @@ def plot_german_data(lon,lat,adata,pos=[],plottitle=''):
     gl.ylocator = mticker.FixedLocator(latLabels)
     gl.xformatter = LongitudeFormatter()
     gl.yformatter = LatitudeFormatter()
-    cbar=plt.colorbar(da)
+    cbar=plt.colorbar(da,pad=0.07)
     cbar.set_label('°C', rotation=90)
-    plt.show
+    if len(axlims) != 0:
+        da.set_clim(axlims)
+    plt.show()
+    return fig
