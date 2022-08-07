@@ -52,7 +52,7 @@ if __name__ == '__main__':
     # Leipzig
     pos=[51.3, 12.37]
     # Plot Location and first dataset
-    plot_german_data(lon, lat, adata,pos)
+    plot_german_data(lon, lat, adata[:,:,1],pos)
     # create colormap for climate stripes
     # Colormap 2 in 36C3 design (RGB)
     # Destruction: 254 80 0

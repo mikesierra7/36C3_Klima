@@ -11,3 +11,6 @@ DWD/data/.DS_Store
 *.png
 *.m~
 *.nc
+DWD/atmodata.npz
+*.gz
+*.pyc
