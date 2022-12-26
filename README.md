@@ -5,6 +5,7 @@ Links to publications/websites from the talk
 --------------------------------------------
 * [Zeit online 10. December 2019 "Viel zu warm hier"](https://www.zeit.de/wissen/umwelt/2019-12/klimawandel-globale-erwaermung-warming-stripes-wohnort)
 * [Warming stripes globally](https://showyourstripes.info) and related [data repository](http://berkeleyearth.org)
+* [Zeit online 24. December 2022 "Schneefall und Klimawandel: Früher war mehr Weiß"](https://www.zeit.de/wissen/2022-12/schneefall-klimawandel-deutschland-deutscher-wetterdienst)
 
 Links to data providers
 -----------------------
