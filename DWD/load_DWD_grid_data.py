@@ -37,6 +37,7 @@ for dfile in files:
 tf.close()
 # convert to binary file for later use
 allfiles=glob.glob('data_asc/*.asc')
+allfiles.sort()
 zp=np.zeros(len(allfiles))
 adata=np.zeros((nrows,ncols,len(allfiles)))
 co = 0
