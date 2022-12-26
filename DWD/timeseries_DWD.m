@@ -55,8 +55,8 @@ ax.FontSize=14;
 % The filename changes annually because the name includes the end of the
 % timeseries, which is always last year (e.g. 20201231) 
 if reloaddata
-    df='produkt_tu_stunde_18930101_20201231_03987';
-    websave(['data/' df '.zip'],'https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/air_temperature/historical/stundenwerte_TU_03987_18930101_20201231_hist.zip');
+    df='produkt_tu_stunde_18930101_20211231_03987';
+    websave(['data/' df '.zip'],'https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/air_temperature/historical/stundenwerte_TU_03987_18930101_20211231_hist.zip');
     unzip(['data/' df '.zip'],'data_single');
     fid=fopen(['data_single/' df '.txt']);
     hd=textscan(fid,'%*s %s %*d %f %f %*s','headerlines',1,'delimiter',';');
