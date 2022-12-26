@@ -60,8 +60,8 @@ title('DWD Station Locations');
 %% Potsdam timeseries
 % longest record available
 if reloaddata
-    df='produkt_tu_stunde_18930101_20181231_03987';
-    s=urlread('https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/air_temperature/historical/stundenwerte_TU_03987_18930101_20181231_hist.zip');
+    df='produkt_tu_stunde_18930101_20211231_03987';
+    s=urlread('https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/hourly/air_temperature/historical/stundenwerte_TU_03987_18930101_20211231_hist.zip');
     fido=fopen(['data/' df '.zip'],'w');
     fprintf(fido,'%s',s);
     fclose(fido)
